@@ -6,10 +6,13 @@ use Livewire\Component;
 
 class Score extends Component
 {
+    public string $logo = '';
     public string $name = '';
+    public string $visitorName = '';
+    public string $teamMode = '';
+    public string $result = '';
     public int $homeScore = 0;
     public int $visitorScore = 0;
-    public string $result = '';
 
     public function render()
     {
@@ -18,6 +21,10 @@ class Score extends Component
             'home_score'    => $this->homeScore,
             'visitor_score' => $this->visitorScore,
             'result'        => $this->checkScore(),
+            'logo'          => $this->logo,
+            'name'          => $this->name,
+            'team_mode'     => $this->teamMode,
+            'visitor_name'  => $this->visitorName,
         ]);
     }
 

@@ -4,4 +4,5 @@
     <div class="text-left w-40" id="team_name">{{ $team_name }}</div>
     <x-app.team-score :score="$score" />
     <x-app.score-vote :team_mode="$team_mode" />
+
 </div>
