@@ -12,7 +12,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Kanit', ...defaultTheme.fontFamily.sans],
+                sans: ['Bebas Neue', ...defaultTheme.fontFamily.sans],
             },
         },
     },
