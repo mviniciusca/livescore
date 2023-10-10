@@ -1,22 +1,28 @@
 @props(['squad' => '', 'logo' => '', 'mode' => '', 'score' => 0, 'status'])
 
-<div>
-    <div @if($score==3) class="flex items-center bg-slate-100 p-4 my-1" @else
-        class="flex items-center bg-white p-4 my-1" @endif>
-
-        <div id="squad-logo" class="w-12 h-12">
-            <img src="https://pickem-cdn.overwatchleague.com/teams/{{ $logo }}.svg" alt="{{ $squad }} - logo">
-        </div>
-        <div class="flex items-center justify-center">
-            <div id="squad-name" @if($score==3) class="text-md flex   text-indigo-500 uppercase font-semibold" @else
-                class="text-md flex   text-slate-500 uppercase font-semibold" @endif>
-
-                <span class="mt-1 ml-2 mr-2 text-md tracking-tighter leading-snug">
-                    {{ $squad }}
+<div class="my-2 flex items-center justify-between gap-4 bg-slate-100 p-2">
+    {{-- Logo --}}
+    <div id="squad-logo" class="flex h-12 w-12 justify-start gap-3">
+        <img class="h-12 w-12" src="https://pickem-cdn.overwatchleague.com/teams/{{ $logo }}.svg"
+            alt="{{ $squad }} - logo" />
+        {{-- Squad Name --}}
+        <div id="squad-name">
+            <div class="grid items-start justify-start leading-snug tracking-tighter">
+                <!-- get everything but the last name from squad -->
+                <span class="text-xs">
+                    {{ implode(' ', array_slice(explode(' ', $squad), 0, -1)) }}
                 </span>
-
+                <!-- get the last name from squad -->
+                <span class="-mt-2 text-xl font-extrabold">
+                    {{ explode(' ', $squad)[count(explode(' ', $squad)) - 1] }}
+                </span>
             </div>
-            <x-counter :mode='$mode' :score='$score' :status='$status' />
         </div>
     </div>
+
+    {{--  Counter --}}
+    <div id="counter-app">
+        <x-counter :mode='$mode' :score='$score' :status='$status' />
+    </div>
+
 </div>
