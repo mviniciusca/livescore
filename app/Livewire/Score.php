@@ -7,6 +7,8 @@ use Livewire\Component;
 
 class Score extends Component
 {
+    public $guestTeamLogo = '';
+    public $homeTeamLogo = '';
     public string $locale = '';
     public string $matchStatus = '';
     public string $group = '';
@@ -15,6 +17,12 @@ class Score extends Component
     public int $guestScore = 0;
     public string $teamGuest = 'Guest Team';
     public bool $endMatch = false;
+
+    public function mount()
+    {
+        $this->guestTeamLogo = str_replace(' ', '-', strtolower($this->teamGuest));
+        $this->homeTeamLogo  = str_replace(' ', '-', strtolower($this->teamHome));
+    }
     public function render(): View
     {
         return view('livewire.score', [
