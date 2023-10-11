@@ -1,7 +1,6 @@
 <x-app-layout>
 
-    <div
-        class="container mx-auto px-5 py-16 text-2xl font-bold uppercase tracking-tight text-slate-500 dark:text-zinc-600">
+    <div class="container mx-auto px-5 py-16 text-2xl font-bold uppercase tracking-tight">
         <h2>
             Pick'em: Overwatch League - Predictions
         </h2>

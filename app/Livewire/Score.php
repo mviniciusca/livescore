@@ -18,6 +18,8 @@ class Score extends Component
     public string $teamGuest = 'Guest Team';
     public bool $endMatch = false;
 
+    public int $maxPoint = 3;
+
     public function mount()
     {
         $this->guestTeamLogo = str_replace(' ', '-', strtolower($this->teamGuest));
@@ -31,33 +33,34 @@ class Score extends Component
             'result'     => $this->matchResult(),
             'status'     => $this->matchStatus(),
             'endMatch'   => $this->endMatch,
+            'maxPoint'   => $this->maxPoint,
         ]);
     }
 
     public function incrementGuest()
     {
-        if ($this->guestScore >= 0 && $this->guestScore < 3 && $this->homeScore < 3) {
+        if ($this->guestScore >= 0 && $this->guestScore < $this->maxPoint && $this->homeScore < $this->maxPoint) {
             $this->guestScore++;
         }
     }
 
     public function incrementHome()
     {
-        if ($this->homeScore >= 0 && $this->homeScore < 3 && $this->guestScore < 3) {
+        if ($this->homeScore >= 0 && $this->homeScore < $this->maxPoint && $this->guestScore < $this->maxPoint) {
             $this->homeScore++;
         }
     }
 
     public function decrementGuest()
     {
-        if ($this->guestScore > 0 && $this->homeScore < 3) {
+        if ($this->guestScore > 0 && $this->homeScore < $this->maxPoint) {
             $this->guestScore--;
         }
     }
 
     public function decrementHome()
     {
-        if ($this->homeScore > 0 && $this->guestScore < 3) {
+        if ($this->homeScore > 0 && $this->guestScore < $this->maxPoint) {
             $this->homeScore--;
         }
     }
@@ -65,13 +68,13 @@ class Score extends Component
 
     public function matchResult()
     {
-        if ($this->guestScore < 3 && $this->guestScore > $this->homeScore) {
+        if ($this->guestScore < 4 && $this->guestScore > $this->homeScore) {
             return $this->teamGuest . ' ' . 'Average';
-        } elseif ($this->homeScore < 3 && $this->homeScore > $this->guestScore) {
+        } elseif ($this->homeScore < $this->maxPoint && $this->homeScore > $this->guestScore) {
             return $this->teamHome . ' ' . 'Average';
-        } elseif ($this->guestScore == 3) {
+        } elseif ($this->guestScore == $this->maxPoint) {
             return $this->teamGuest . ' ' . 'Victory';
-        } elseif ($this->homeScore == 3) {
+        } elseif ($this->homeScore == $this->maxPoint) {
             return $this->teamHome . ' ' . 'Victory';
         } else {
             return 'Draw';
@@ -80,7 +83,7 @@ class Score extends Component
 
     public function matchStatus()
     {
-        if ($this->guestScore < 3 && $this->homeScore < 3) {
+        if ($this->guestScore < $this->maxPoint && $this->homeScore < $this->maxPoint) {
             return 'progress';
         } else {
             return 'final';
