@@ -82,9 +82,9 @@ class Score extends Component
     public function matchStatus()
     {
         if ($this->guestScore < $this->maxPoint && $this->homeScore < $this->maxPoint) {
-            return 'progress';
+            return 'Match in progress';
         } else {
-            return 'final';
+            return 'Final';
         }
     }
 
