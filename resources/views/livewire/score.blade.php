@@ -1,7 +1,8 @@
 <div>
     <div id="counters-group" class="bg-slate-50 p-4 uppercase dark:bg-zinc-900 dark:border dark:border-zinc-800">
 
-        <div class="p-1 inline-block -mt-4 absolute text-xs dark:bg-orange-700 font-semibold dark:text-white">
+        <div
+            class="p-1 inline-block -mt-4 absolute text-xs bg-indigo-50 dark:bg-orange-700 font-semibold dark:text-white">
             {{ $status }}
         </div>
 
