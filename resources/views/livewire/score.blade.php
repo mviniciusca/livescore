@@ -1,5 +1,5 @@
 <div>
-    <div id="counters-group" class="bg-slate-50 p-4 uppercase dark:bg-zinc-950">
+    <div id="counters-group" class="bg-slate-50 p-4 uppercase dark:bg-zinc-900">
         <div id="card-group-details text-xs flex">
             <p>{{ $status }}</p>
             <p class="-mt-2 font-bold">{{ $result }}</p>
