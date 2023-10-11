@@ -1,7 +1,7 @@
 @props(['squad' => '', 'logo' => '', 'mode' => '', 'score' => 0, 'status', 'maxPoint'])
 
 <div class="flex gap-2 p-2 my-2 items-center opacity-90 hover:opacity-100 transition-all duration-100
-@if ($score < $maxPoint) bg-slate-100 dark:bg-zinc-950 @endif
+@if ($score < $maxPoint) bg-slate-100 dark:bg-zinc-800 @endif
 @if($score == $maxPoint) bg-indigo-100 dark:bg-orange-800 dark:text-white @endif
 ">
     <div class="w-full flex gap-4">
