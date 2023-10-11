@@ -19,9 +19,9 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans antialiased uppercase bg-white text-slate-500 dark:bg-zinc-950 dark:text-zinc-500">
+<body class="font-sans antialiased uppercase bg-slate-50 text-slate-500 dark:bg-zinc-950 dark:text-zinc-500">
     {{-- background image --}}
-    <div class="absolute -z-10 grayscale bg w-full h-screen opacity-5"></div>
+    <div class="fixed -z-10 grayscale bg w-full h-full opacity-10"></div>
     <div class="min-h-screen container mx-auto ">
         @include('layouts.navigation')
 
@@ -44,7 +44,7 @@
             background-image:
                 url('https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
-            background-position: center top;
+            background-position: center center;
             background-repeat: no-repeat;
         }
     </style>

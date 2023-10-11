@@ -15,7 +15,7 @@ class ThemeSwitch extends Component
     }
     public function render()
     {
-        return view('livewire.themeSwitch', [
+        return view('livewire.theme-switch', [
             'active' => $this->updatedActive(),
         ]);
     }
@@ -25,12 +25,12 @@ class ThemeSwitch extends Component
             setcookie('theme', 'dark', time() + (86400 * 30), "/");
             session([ 'theme' => 'dark' ]);
             $this->js("document.documentElement.classList.add('dark')");
-            $this->theme = 'dark';
+            $this->theme = 'light';
         } else {
             setcookie('theme', 'light', time() + (86400 * 30), "/");
             session([ 'theme' => 'light' ]);
             $this->js("document.documentElement.classList.remove('dark')");
-            $this->theme = 'light';
+            $this->theme = 'dark';
         }
     }
 }

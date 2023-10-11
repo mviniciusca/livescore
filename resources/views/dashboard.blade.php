@@ -1,6 +1,6 @@
 <x-app-layout>
 
-    <livewire:themeSwitch />
+    <livewire:theme-switch />
 
     <div class="container mx-auto px-5 py-16 text-2xl font-bold uppercase tracking-tight">
         <h2>
