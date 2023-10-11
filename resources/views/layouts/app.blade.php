@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!-- if get session theme with dark value -->
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" @if (session('theme')=='dark' ) class="dark" @endif>
 
 <head>
-    <meta charset="utf-8">
+    <meta charset=" utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
