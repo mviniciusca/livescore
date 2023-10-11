@@ -18,9 +18,9 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans antialiased uppercase bg-white text-slate-500 dark:bg-zinc-900 dark:text-zinc-500">
+<body class="font-sans antialiased uppercase bg-white text-slate-500 dark:bg-zinc-950 dark:text-zinc-500">
     {{-- background image --}}
-    <div class="absolute -z-10 grayscale bg w-full h-screen opacity-20"></div>
+    <div class="absolute -z-10 grayscale bg w-full h-screen opacity-5"></div>
     <div class="min-h-screen container mx-auto ">
         @include('layouts.navigation')
 

@@ -4,7 +4,7 @@
     <div class="flex items-center justify-between gap-4">
 
         <div
-            class="text-slate-500 font-extrabold text-2xl border bg-white dark:text-zinc-700 dark:bg-zinc-950 dark:border-black border-zinc-500 px-2 py-1 text-center w-8">
+            class="font-extrabold text-2xl border bg-white  dark:bg-zinc-950 dark:border-black border-zinc-500 px-2 py-1 text-center w-8">
             {{ $score }}
         </div>
 

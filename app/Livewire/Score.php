@@ -17,9 +17,7 @@ class Score extends Component
     public int $guestScore = 0;
     public string $teamGuest = 'Guest Team';
     public bool $endMatch = false;
-
     public int $maxPoint = 3;
-
     public function mount()
     {
         $this->guestTeamLogo = str_replace(' ', '-', strtolower($this->teamGuest));
@@ -28,12 +26,12 @@ class Score extends Component
     public function render(): View
     {
         return view('livewire.score', [
-            'guestScore' => $this->guestScore,
-            'homeScore'  => $this->homeScore,
-            'result'     => $this->matchResult(),
             'status'     => $this->matchStatus(),
+            'result'     => $this->matchResult(),
             'endMatch'   => $this->endMatch,
             'maxPoint'   => $this->maxPoint,
+            'homeScore'  => $this->homeScore,
+            'guestScore' => $this->guestScore,
         ]);
     }
 
