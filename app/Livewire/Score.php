@@ -66,7 +66,7 @@ class Score extends Component
 
     public function matchResult()
     {
-        if ($this->guestScore < 4 && $this->guestScore > $this->homeScore) {
+        if ($this->guestScore < $this->maxPoint && $this->guestScore > $this->homeScore) {
             return $this->teamGuest . ' ' . 'Average';
         } elseif ($this->homeScore < $this->maxPoint && $this->homeScore > $this->guestScore) {
             return $this->teamHome . ' ' . 'Average';
@@ -74,7 +74,10 @@ class Score extends Component
             return $this->teamGuest . ' ' . 'Victory';
         } elseif ($this->homeScore == $this->maxPoint) {
             return $this->teamHome . ' ' . 'Victory';
-        } else {
+        } elseif ($this->guestScore == ($this->maxPoint -1) && $this->homeScore == ($this->maxPoint -1)) {
+            return 'Overtime: Tie-break';
+        }
+        else {
             return 'Draw';
         }
     }

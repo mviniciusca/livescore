@@ -14,10 +14,10 @@
                 alt="{{ $squad }} - logo" />
         </div>
         <div id="squad-team-name" class="grid">
-            <div class="text-md dark:font-semibold">
+            <div class="text-xs lg:text-md dark:font-semibold">
                 {{ implode(' ', array_slice(explode(' ', $squad), 0, -1)) }}
             </div>
-            <div class="-mt-4 text-2xl font-extrabold">
+            <div class="-mt-4 text-sm lg:text-2xl font-extrabold">
                 {{ explode(' ', $squad)[count(explode(' ', $squad)) - 1] }}
             </div>
         </div>
@@ -25,7 +25,8 @@
 
     {{-- Counter App --}}
     <div class="w-1/4">
-        <x-counter :mode='$mode' :score='$score' :status='$status' />
+        <x-counter :mode='$mode' :score='$score' :status='$status'
+            :maxPoint='$maxPoint' />
     </div>
 
 </div>

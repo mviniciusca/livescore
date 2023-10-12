@@ -1,4 +1,4 @@
-@props(['mode','score','status'])
+@props(['mode','score','status', 'maxPoint'])
 
 <div>
     <div class="flex items-center justify-between gap-4 py-4">
@@ -12,7 +12,7 @@
         <div class="grid -ml-4 items-start">
 
             {{-- Increment Button --}}
-            @if($score < 3 ) <button
+            @if($score < $maxPoint ) <button
                 class="text-xl hover:opacity-80 active:opacity-20 transition-all duration-100"
                 wire:click='increment{{ $mode }}'>
                 <!-- heroicons -->
@@ -25,7 +25,7 @@
                 @endif
 
                 {{-- Decrement Button --}}
-                @if($score <= 3 ) <button
+                @if($score <= $maxPoint ) <button
                     class="text-xl hover:opacity-80 active:opacity-20 transition-all duration-100"
                     wire:click='decrement{{ $mode }}'>
                     <!-- heroicons -->
