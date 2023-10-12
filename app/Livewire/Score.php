@@ -75,7 +75,7 @@ class Score extends Component
         } elseif ($this->homeScore == $this->maxPoint) {
             return $this->teamHome . ' ' . 'Victory';
         } elseif ($this->guestScore == ($this->maxPoint -1) && $this->homeScore == ($this->maxPoint -1)) {
-            return 'Overtime: Tie-break';
+            return 'Tie-break';
         }
         else {
             return 'Draw';
