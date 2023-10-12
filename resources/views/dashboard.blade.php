@@ -1,14 +1,11 @@
 <x-app-layout>
 
     <x-slot name="header">
-        <h2 class=" text-2xl font-semibold py-20 leading-tighter">
-            {{ __('Overwatch League Predictions') }}
-        </h2>
+        {{ __('Overwatch League Predictions') }}
     </x-slot>
 
-    <div class="container mx-auto px-5">
-        <div class="-m-4 flex flex-wrap ">
-
+    <div class="mx-auto sm:px-6 lg:px-8 space-y-6">
+        <div class="-m-4 flex flex-wrap">
             {{-- Squad --}}
             <div class="w-full p-4 md:w-1/2 lg:w-1/4">
                 <livewire:score :group="'A'" :matchStatus="'Live'"

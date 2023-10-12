@@ -32,7 +32,8 @@ class=" dark @endif ">
         @if (isset($header))
         <header class="">
             <livewire:theme-switch />
-            <div class=" mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <div
+                class="mx-auto py-24 px-4 font-extrabold sm:px-6 lg:px-8 text-2xl leading-tight tracking-tight">
                 {{ $header }}
             </div>
         </header>
