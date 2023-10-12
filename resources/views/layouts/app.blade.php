@@ -33,7 +33,7 @@ class=" dark @endif ">
         <header class="">
             <livewire:theme-switch />
             <div
-                class="mx-auto  px-6 py-24 font-extrabold  text-2xl leading-tight tracking-tight">
+                class="mx-auto px-6 py-16 font-extrabold  text-2xl leading-tight tracking-tight">
                 {{ $header }}
             </div>
         </header>
