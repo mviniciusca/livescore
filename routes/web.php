@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Models\Event;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,9 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('dashboard', [
+        'events' => Event::query()->with('teamHome', 'teamGuest')->get()
+    ]);
 })->middleware([ 'auth', 'verified' ])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
