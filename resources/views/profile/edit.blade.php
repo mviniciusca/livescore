@@ -1,0 +1,31 @@
+<x-app-layout>
+    <x-slot name="header">
+        {{ __('Profile') }}
+    </x-slot>
+
+
+    <div class="mx-auto p-6 sm:px-6 lg:px-8 space-y-6">
+        <div class="grid gap-4 md:flex md:gap-8">
+            <div class="p-4 md:w-1/2 sm:p-8 bg-white dark:bg-zinc-900">
+                <div class="max-w-xl">
+                    @include('profile.partials.update-profile-information-form')
+                </div>
+            </div>
+
+            <div class="p-4 md:w-1/2 sm:p-8 bg-white dark:bg-zinc-900">
+                <div class="max-w-xl">
+                    @include('profile.partials.update-password-form')
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="p-4 sm:p-8 bg-white dark:bg-zinc-900">
+            <div class="max-w-xl">
+                @include('profile.partials.delete-user-form')
+            </div>
+        </div>
+    </div>
+
+</x-app-layout>
