@@ -11,15 +11,9 @@ class TeamSearch extends Component
     public function render()
     {
         return view('livewire.team-search', [
-            'teams' => Team::where('name', 'like', '%' . $this->teamName . '%')->get()
+            'teams' => Team::where('name', 'like', '%' . $this->teamName . '%')
+                ->orderBy('name')
+                ->get()
         ]);
-    }
-
-    public function search()
-    {
-        $this->validate([
-            'teamName' => 'required|min:3'
-        ]);
-        $this->emit('searchTeam', $this->teamName);
     }
 }
