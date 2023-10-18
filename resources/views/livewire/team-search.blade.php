@@ -1,65 +1,31 @@
+@props(['mode' => 'full'])
 <div>
-    <div class="mb-2">
-        <x-text-input wire:model.live="teamName" :placeholder="'serach'" class="w-full" />
-    </div>
-    <div class="container px-5 py-24 mx-auto">
-        <div class="flex flex-wrap -m-8">
-            @foreach ($teams as $team )
-            <div class="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-4 flex gap-4 items-center justify-between">
-                <div
-                    class="bg-slate-50 hover:bg-slate-100 dark:hover:bg-zinc-700 dark:bg-zinc-800 p-4 w-full flex gap-2 transition-all duration-100">
-                    <img class="w-16 h-16" src="{{ $team->logo }}">
-                    <div class="grid items-center justify-start">
-                        <span class="text-xs md:text-md mt-1 dark:font-semibold">
-                            {{ implode(' ',array_slice(explode(' ',trim($team->name)),0,-1)) }}
-                        </span>
-                        <span class="text-lg md:text-2xl -mt-8 font-extrabold">
-                            {{ explode(' ',trim($team->name))[count(explode(' ',trim($team->name)))-1]  }}
-                        </span>
-                    </div>
-                </div>
-            </div>
-            @endforeach
+    <div class="inline-block mb-8 -ml-4 px-4 bg-zinc-100 border border-zinc-100 dark:border-zinc-900 dark:bg-zinc-900">
+        <div class="flex gap-2 justify-start items-center flex-wrap">
+            <svg class="w-6 h-6 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M11 18a7 7 0 100-14 7 7 0 000 14z">
+                </path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35"></path>
+            </svg>
+            <x-text-input
+                class="border-none shadow-none ring-0 bg-transparent outline-none focus:outline-none focus:border-none active:border-none active:outline-none dark:active:ring-0 dark:focus:ring-0 dark:ring-0 dark:border-none"
+                wire:model.live="search" placeholder="Search for a team" />
         </div>
     </div>
+    <div class="flex flex-wrap -m-4 items-center gap-1">
+        @foreach ($teams as $team)
+        <div class="grid justify-center items-center">
+            <div class="bg-zinc-50 dark:bg-zinc-800">
+                <a class="h-20 w-20 grid text-center items-center justify-center overflow-hidden">
+                    <img alt="{{ $team->name }}-logo" class="w-12 h-12 m-auto" src="{{ $team->logo }}">
+                    <span
+                        class="text-xs -mt-3 font-extrabold">{{ explode(' ',trim($team->name))[count(explode(' ',trim($team->name)))-1]  }}
+                    </span>
+                </a>
+            </div>
+        </div>
+        @endforeach
+    </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{{-- <div class="dark:bg-zinc-800">
-
-        <div class="md:flex flex-wrap items-center justify-between gap-4">
-            @foreach ($teams as $team )
-            <div class="p-4 flex bg-zinc-400  w-1/6 justify-between gap-4 items-center font-semibold leading-tight">
-                <div>
-                    <div>
-                        <img class="w-16 h-16" src="{{ $team->logo }}" alt="">
-</div>
-</div>
-<div class="grid items-start justify-start">
-    <!-- get all the words from the string except the last word -->
-    <span class="text-md -mt-4">{{ implode(' ',array_slice(explode(' ',trim($team->name)),0,-1)) }}
-    </span>
-    <!-- get the last word from the string -->
-    <span class="text-2xl -mt-2 font-extrabold">
-        {{ explode(' ',trim($team->name))[count(explode(' ',trim($team->name)))-1]  }}
-    </span>
-</div>
-</div>
-@endforeach
-</div>
-</div> --}}

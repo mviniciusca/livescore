@@ -3,8 +3,11 @@
     <x-slot name="header">
         {{ __('Overwatch League Predictions') }}
     </x-slot>
+
     <div class="mx-auto p-6 sm:px-6 lg:px-8 space-y-6">
-        <livewire:team-search />
+        <div class="p-4 w-1/2">
+            <livewire:team-search />
+        </div>
         <div class="-m-4 flex flex-wrap">
             {{-- Squad --}}
             @foreach ($events as $event )

@@ -7,11 +7,11 @@ use Livewire\Component;
 
 class TeamSearch extends Component
 {
-    public string $teamName = '';
+    public string $search = '';
     public function render()
     {
         return view('livewire.team-search', [
-            'teams' => Team::where('name', 'like', '%' . $this->teamName . '%')
+            'teams' => Team::where('name', 'like', '%' . $this->search . '%')
                 ->orderBy('name')
                 ->get()
         ]);
