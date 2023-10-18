@@ -17,9 +17,15 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
+/**Redirect to App  */
+Route::get('/dashboard', function () {
+    return redirect('/app');
+});
+
+/** Route homepage */
 Route::get('/', function () {
     Auth::loginUsingId(1);
-    return redirect('/dashboard');
+    return redirect('/app');
 });
 
 /** Group routes in middleware auth in group app */

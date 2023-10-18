@@ -16,4 +16,8 @@ class TeamSearch extends Component
                 ->get()
         ]);
     }
+    public function clear()
+    {
+        $this->reset('search');
+    }
 }

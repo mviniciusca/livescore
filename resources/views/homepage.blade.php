@@ -5,7 +5,7 @@
     </x-slot>
 
     <div class="mx-auto p-6 sm:px-6 lg:px-8 space-y-6">
-        <div class="p-4 w-1/2">
+        <div class="p-4 w-1/2 rounded-lg items-center justify-between">
             <livewire:team-search />
         </div>
         <div class="-m-4 flex flex-wrap">
