@@ -16,8 +16,14 @@ class TeamSearch extends Component
                 ->get()
         ]);
     }
+
+    public function show($id)
+    {
+        $this->dispatch('show', id: $id);
+    }
     public function clear()
     {
         $this->reset('search');
     }
+
 }

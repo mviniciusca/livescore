@@ -34,7 +34,8 @@
         @foreach ($teams as $team)
         {{-- card --}}
         <div class="grid">
-            <div class="cursor-pointer  hover:opacity-80 active:opacity-90 bg-zinc-50 dark:bg-zinc-800">
+            <div wire:click='show({{ $team->id }})'
+                class="cursor-pointer  hover:opacity-80 active:opacity-90 bg-zinc-50 dark:bg-zinc-800">
                 <a class="h-20 w-20 grid text-center items-center justify-center overflow-hidden">
                     <img alt="{{ $team->name }}-logo" class="w-12 h-12 m-auto" src="{{ $team->logo }}">
                     <span

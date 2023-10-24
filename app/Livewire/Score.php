@@ -62,8 +62,6 @@ class Score extends Component
             $this->homeScore--;
         }
     }
-
-
     public function matchResult()
     {
         if ($this->guestScore < $this->maxPoint && $this->guestScore > $this->homeScore) {
@@ -74,10 +72,9 @@ class Score extends Component
             return $this->teamGuest . ' ' . 'Victory';
         } elseif ($this->homeScore == $this->maxPoint) {
             return $this->teamHome . ' ' . 'Victory';
-        } elseif ($this->guestScore == ($this->maxPoint -1) && $this->homeScore == ($this->maxPoint -1)) {
+        } elseif ($this->guestScore == ($this->maxPoint - 1) && $this->homeScore == ($this->maxPoint - 1)) {
             return 'Tie-break';
-        }
-        else {
+        } else {
             return 'Draw';
         }
     }
