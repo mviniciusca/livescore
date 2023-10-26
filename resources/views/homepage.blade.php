@@ -5,9 +5,13 @@
     </x-slot>
 
     <div class="mx-auto p-6 sm:px-6 lg:px-8 space-y-6">
-        <div class="p-4 w-1/2 rounded-lg items-center justify-between">
-            <livewire:team-search />
-            <livewire:team-view />
+        <div class="w-full flex gap-4 justify-between">
+            <div class="w-1/2">
+                <livewire:team-search />
+            </div>
+            <div class="w-1/2 mt-20">
+                <livewire:team-view />
+            </div>
         </div>
         <div class="-m-4 flex flex-wrap">
             {{-- Squad --}}
