@@ -124,6 +124,6 @@ class DatabaseSeeder extends Seeder
                 'slug' => 'washington-justice',
             ],
         ]);
-        Event::factory()->count(12)->create();
+        Event::factory()->count(4)->create();
     }
 }
