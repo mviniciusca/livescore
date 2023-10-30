@@ -43,15 +43,4 @@ class TeamSearch extends Component
         $this->reset('search');
     }
 
-    /**
-     * Dispatch a reset-id-view event to the TeamView component.
-     * @return void
-     */
-    public function updatedSearch()
-    {
-        if ($this->search != '') {
-            $this->dispatch('reset-id-view');
-        }
-    }
-
 }

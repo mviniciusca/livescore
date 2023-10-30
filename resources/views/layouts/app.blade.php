@@ -10,19 +10,19 @@ class=" dark @endif ">
 
 <title>{{ config('app.name', 'Laravel') }}</title>
 
+<!-- Icon .ico -->
+<link rel="shortcut icon" href="https://laravel.com/img/logomark.min.svg" type="image/x-icon">
+
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-    href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Scripts -->
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body
-    class="font-sans antialiased uppercase bg-slate-50 text-slate-500 dark:bg-zinc-950 dark:text-zinc-500">
+<body class="font-sans antialiased uppercase bg-slate-50 text-slate-500 dark:bg-zinc-950 dark:text-zinc-500">
     {{-- background image --}}
     <div class="fixed -z-10 grayscale bg w-full h-full opacity-10"></div>
     <div class="min-h-screen container mx-auto ">
@@ -32,8 +32,7 @@ class=" dark @endif ">
         @if (isset($header))
         <header class="">
             <livewire:theme-switch />
-            <div
-                class="mx-auto px-6 py-16 font-extrabold  text-2xl leading-tight tracking-tight">
+            <div class="mx-auto px-6 py-16 font-extrabold  text-2xl leading-tight tracking-tight">
                 {{ $header }}
             </div>
         </header>

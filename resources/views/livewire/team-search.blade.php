@@ -30,11 +30,11 @@
                 wire:model.live="search" name="search" id="search" placeholder="Search for a team" />
         </div>
     </div>
-    <div class="flex flex-wrap -m-4 items-center justify-self-auto gap-4 p-4">
+    <div class="flex flex-wrap  -m-4 items-center justify-self-auto gap-4 p-4">
         @foreach ($teams as $team)
         {{-- card --}}
         <div class="grid">
-            <div wire:click='show({{ $team->id }})'
+            <div wire:key='{{ $team->id }}' wire:click='show({{ $team->id }})'
                 class="cursor-pointer  hover:opacity-80 active:opacity-90 bg-zinc-50 dark:bg-zinc-800">
                 <a class="h-20 w-20 grid text-center items-center justify-center overflow-hidden">
                     <img alt="{{ $team->name }}-logo" class="w-12 h-12 m-auto" src="{{ $team->logo }}">

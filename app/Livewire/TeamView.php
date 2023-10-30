@@ -34,14 +34,10 @@ class TeamView extends Component
         $this->id = $id;
     }
 
-    #[On('reset-id-view')]
-
-    /**
-     * Reset the id property.
-     * @return void
-     */
-    public function resetId()
+    public function clear()
     {
-        $this->id = null;
+        $this->reset('id');
     }
+
+
 }
